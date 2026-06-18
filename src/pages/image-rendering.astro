@@ -1,0 +1,57 @@
+---
+import Site from "../lib/site.astro";
+---
+
+<Site>
+    <section class="one-to-one">
+        <h1>Test: image-rendering for pixelart</h1>
+        <h1>1:1</h1>
+        <h2>Smooth</h2>
+        <img class="smooth" src="/assets/render-tester.png" />
+        <h2>Crisp-Edges</h2>
+        <img class="crisp" src="/assets/render-tester.png" />
+        <h2>Pixelated</h2>
+        <img class="pixel" src="/assets/render-tester.png" />
+    </section>
+    <section class="twice">
+        <h1>2x</h1>
+        <h2>Smooth</h2>
+        <img class="smooth" src="/assets/render-tester.png" />
+        <h2>Crisp-Edges</h2>
+        <img class="crisp" src="/assets/render-tester.png" />
+        <h2>Pixelated</h2>
+        <img class="pixel" src="/assets/render-tester.png" />
+    </section>
+</Site>
+
+<style is:global>
+    body {
+        overflow-x: auto;
+    }
+    section {
+        padding: 3rem;
+    }
+    h1:first-of-type {
+        margin-bottom: 2rem;
+    }
+    h2 {
+        margin-top: 2rem;
+    }
+    .one-to-one img {
+        width: 256px;
+        height: 128px;
+    }
+    .twice img {
+        width: 512px;
+        height: 256px;
+    }
+    .smooth {
+        image-rendering: smooth;
+    }
+    .crisp {
+        image-rendering: crisp-edges;
+    }
+    .pixel {
+        image-rendering: pixelated;
+    }
+</style>

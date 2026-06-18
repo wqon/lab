@@ -6,6 +6,6 @@ export default defineConfig({
   output: "static",
   trailingSlash: "ignore",
   server: {
-    port: 1010,
+    port: 1234,
   },
 });

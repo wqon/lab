@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+html {
+    font-size: 16px;
+    font-family: sans-serif;
+    line-height: 1.5;
+    letter-spacing: 0.05rem;
+}
+body {
+    background: white;
+    color: black;
+    overflow-x: hidden;
+}
+main {
+    width: 100%;
+    max-width: 100svw;
+    height: 100svh;
+    white-space: normal;
+    word-break: break-word;
+}
