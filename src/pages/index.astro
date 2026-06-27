@@ -1,0 +1,47 @@
+---
+import Site from "../lib/site.astro";
+
+const routes = import.meta.glob("./**/*.astro", { eager: true }) as Record<
+    string,
+    { url: string; title?: string }
+>;
+const pages = Object.values(routes)
+    .filter((r) => r.url !== "/")
+    .map((r) => ({
+        url: r.url,
+        title: r.title,
+    }));
+---
+
+<Site title="WQON’s Lab">
+    <h1>WQON’s Lab</h1>
+    <p>
+        <b>Hello.</b><br />
+        This is place for my experimenting with web technologies and ideas. :)
+    </p>
+    <ul>
+        {
+            pages.map((p) => (
+                <li>
+                    <a href={p.url}>{p.title}</a>
+                </li>
+            ))
+        }
+    </ul>
+</Site>
+
+<style is:global>
+    body {
+        padding: 3rem;
+    }
+    h1 {
+        margin-bottom: 2rem;
+    }
+    ul {
+        margin-top: 4rem;
+    }
+    li {
+        list-style: none;
+        font-size: 1.2rem;
+    }
+</style>
